@@ -12,3 +12,7 @@ sauce.json
 
 # sass cache
 .sass-cache/
+
+# ignore source maps
+*.css.map
+*.js.map
