@@ -1,0 +1,27 @@
+<nav>
+  {{partial "logo"}}
+  <ul>
+    {{partial "new-or-continue"}}
+    <li class="fork">
+      <a {{action "forkEquation"}}>Fork</a>
+    </li>
+    <li class="sep"></li>
+    <li class="help">
+      {{#link-to "equations.help"}}Help{{/link-to}}
+    </li>
+  </ul>
+</nav>
+<div class="info">
+  <div class="inner">
+    <div class="meta">Created {{formatTimestamp createdAt}} &middot; {{code.length}} chars</div>
+    <div class="source">{{on-off-switch onText="<span class=\"octicon octicon-eye\"></span>" offText="<span class=\"octicon octicon-code\"></span>" switchState=showCode}}</div>
+    <div class="url">{{clipboard-button tooltipText="Copy URL" clipboardText=currentUrl}}</div>
+  </div>
+</div>
+<section id="equation">
+  {{#if showCode}}
+    {{rainbow-code code=code language="tex"}}
+  {{else}}
+    <div class="markdown">{{renderEquation code}}</div>
+  {{/if}}
+</section>

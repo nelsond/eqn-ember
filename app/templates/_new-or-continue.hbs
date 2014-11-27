@@ -1,0 +1,9 @@
+<li {{bind-attr class="continueIsAvailable:continue:new"}}>
+  {{#link-to "equations.new" }}
+    {{#if continueIsAvailable}}
+      Continue
+    {{else}}
+      New
+    {{/if}}
+  {{/link-to}}
+</li>

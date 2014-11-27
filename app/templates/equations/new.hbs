@@ -1,0 +1,18 @@
+<nav>
+  {{partial "logo"}}
+  <ul>
+    <li class="save">
+      {{loading-button isVisible=isValid isLoading=isLoading buttonText="Save" action="createEquation"}}
+    </li>
+    <li class="sep"></li>
+    <li class="help">
+      {{#link-to "equations.help"}}Help{{/link-to}}
+    </li>
+  </ul>
+</nav>
+<section id="new">
+  <div id="editor">{{code-textarea autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" value=code disabled=isLoading}}</div>
+  <div id="preview">
+    <div class="markdown">{{renderEquation code}}</div>
+  </div>
+</section>

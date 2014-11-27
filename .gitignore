@@ -1,0 +1,8 @@
+# bower components
+lib/
+
+# tmp files
+tmp/
+
+# test coverage
+coverage/

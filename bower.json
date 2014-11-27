@@ -1,0 +1,33 @@
+{
+  "name": "equatio-ember",
+  "version": "0.0.0",
+  "authors": [
+    "Nelson Darkwah Oppong <ndo@felixnelson.de>"
+  ],
+  "description": "Ember.js application for equat.io",
+  "main": "application.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "ember-data": "1.0.0-beta.11",
+    "ember": "1.8.1",
+    "rainbow": "~1.1.9",
+    "showdown": "~0.3.1",
+    "zeroclipboard": "~2.1.6",
+    "moment": "~2.8.4",
+    "handlebars": "1.1.0",
+    "jquery": "1.10.2",
+    "bourbon": "~4.0.2",
+    "katex-runtime": "http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"
+  },
+  "devDependencies": {
+    "jquery-mockjax": "~1.6.1",
+    "ember-qunit": "rwjblue/ember-qunit-builds#~0.1.8"
+  }
+}

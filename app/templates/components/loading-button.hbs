@@ -1,0 +1,9 @@
+<a {{bind-attr class="isVisible:visible :loading-button"}} {{action "showLoading"}}>
+  {{#if isLoading}}
+    <span></span>
+    <span></span>
+    <span></span>
+  {{else}}
+    {{buttonText}}
+  {{/if}}
+</a>

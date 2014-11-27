@@ -1,0 +1,13 @@
+<div class="clipboard-button">
+  {{input value=clipboardText}}
+  <button {{bind-attr class="hasFlash::hidden"}}>
+    {{{buttonText}}}
+    <div class="tooltip">
+      {{#if isCopied}}
+        Copied!
+      {{else}}
+        {{tooltipText}}
+      {{/if}}
+    </div>
+  </button>
+</div>
