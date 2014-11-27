@@ -3,8 +3,7 @@ module.exports = function(grunt) {
 
   if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
     if (!require("fs").existsSync("sauce.json")) {
-      console.log("Create a sauce.json with your credentials.");
-      process.exit(1);
+      console.log("Please create a sauce.json with your credentials.");
     } else {
       process.env.SAUCE_USERNAME = require("./sauce").username;
       process.env.SAUCE_ACCESS_KEY = require("./sauce").accessKey;

@@ -265,7 +265,7 @@ nav {
   color: #404040;
   min-height: 65px;
   border-bottom: 1px solid #e6e6e6; }
-  /* line 15, /Users/Nelson/Dropbox/Aktuell/git/eqn-ember/lib/bourbon/dist/addons/_clearfix.scss */
+  /* line 15, /Users/Nelson/Dropbox/Aktuell/git/eqn/eqn-ember/lib/bourbon/dist/addons/_clearfix.scss */
   nav:after {
     content: "";
     display: table;
@@ -353,7 +353,7 @@ section#new {
   left: 5%;
   bottom: 0;
   position: absolute; }
-  /* line 15, /Users/Nelson/Dropbox/Aktuell/git/eqn-ember/lib/bourbon/dist/addons/_clearfix.scss */
+  /* line 15, /Users/Nelson/Dropbox/Aktuell/git/eqn/eqn-ember/lib/bourbon/dist/addons/_clearfix.scss */
   section#new:after {
     content: "";
     display: table;
@@ -492,7 +492,7 @@ section#equation {
     width: 90%;
     max-width: 960px;
     margin: 0 auto; }
-    /* line 15, /Users/Nelson/Dropbox/Aktuell/git/eqn-ember/lib/bourbon/dist/addons/_clearfix.scss */
+    /* line 15, /Users/Nelson/Dropbox/Aktuell/git/eqn/eqn-ember/lib/bourbon/dist/addons/_clearfix.scss */
     .info .inner:after {
       content: "";
       display: table;

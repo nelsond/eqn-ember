@@ -63879,244 +63879,349 @@ Eqn.EquationsHelpRoute = Em.Route.extend({
   }
 });
 
-Ember.TEMPLATES["_logo"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+Ember.TEMPLATES["_logo"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
   data.buffer.push("<div id=\"logo\"><span>equat</span><span>.io</span></div>\n");
-  },"useData":true});
+  
+});
 
-Ember.TEMPLATES["_new-or-continue"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
-  var stack1, buffer = '';
-  stack1 = helpers['if'].call(depth0, "continueIsAvailable", {"name":"if","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(2, data),"inverse":this.program(4, data),"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
+Ember.TEMPLATES["_new-or-continue"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, self=this, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n    ");
+  stack1 = helpers['if'].call(depth0, "continueIsAvailable", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  ");
   return buffer;
-},"2":function(depth0,helpers,partials,data) {
-  data.buffer.push("      Continue\n");
-  },"4":function(depth0,helpers,partials,data) {
-  data.buffer.push("      New\n");
-  },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, buffer = '';
+  }
+function program2(depth0,data) {
+  
+  
+  data.buffer.push("\n      Continue\n    ");
+  }
+
+function program4(depth0,data) {
+  
+  
+  data.buffer.push("\n      New\n    ");
+  }
+
   data.buffer.push("<li ");
-  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {"name":"bind-attr","hash":{
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("continueIsAvailable:continue:new")
-  },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"types":[],"contexts":[],"data":data})));
-  data.buffer.push(">\n");
-  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "equations.new", {"name":"link-to","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n");
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(">\n  ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "equations.new", options) : helperMissing.call(depth0, "link-to", "equations.new", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n</li>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["application"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = '';
-  data.buffer.push(escapeExpression(((helpers['flash-message'] || (depth0 && depth0['flash-message']) || helperMissing).call(depth0, {"name":"flash-message","hash":{
+Ember.TEMPLATES["application"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push(escapeExpression((helper = helpers['flash-message'] || (depth0 && depth0['flash-message']),options={hash:{
     'message': ("flashMessage")
-  },"hashTypes":{'message': "ID"},"hashContexts":{'message': depth0},"types":[],"contexts":[],"data":data}))));
+  },hashTypes:{'message': "ID"},hashContexts:{'message': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "flash-message", options))));
   data.buffer.push("\n");
-  stack1 = helpers._triageMustache.call(depth0, "outlet", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
+  stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["components/clipboard-button"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
-  data.buffer.push("        Copied!\n");
-  },"3":function(depth0,helpers,partials,data) {
-  var stack1, buffer = '';
-  data.buffer.push("        ");
-  stack1 = helpers._triageMustache.call(depth0, "tooltipText", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("\n");
+Ember.TEMPLATES["components/clipboard-button"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  
+  data.buffer.push("\n        Copied!\n      ");
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n        ");
+  stack1 = helpers._triageMustache.call(depth0, "tooltipText", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n      ");
   return buffer;
-},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = '';
+  }
+
   data.buffer.push("<div class=\"clipboard-button\">\n  ");
-  data.buffer.push(escapeExpression(((helpers.input || (depth0 && depth0.input) || helperMissing).call(depth0, {"name":"input","hash":{
+  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
     'value': ("clipboardText")
-  },"hashTypes":{'value': "ID"},"hashContexts":{'value': depth0},"types":[],"contexts":[],"data":data}))));
+  },hashTypes:{'value': "ID"},hashContexts:{'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n  <button ");
-  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {"name":"bind-attr","hash":{
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("hasFlash::hidden")
-  },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"types":[],"contexts":[],"data":data})));
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">\n    ");
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "buttonText", {"name":"_triageMustache","hash":{
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "buttonText", {hash:{
     'unescaped': ("true")
-  },"hashTypes":{'unescaped': "STRING"},"hashContexts":{'unescaped': depth0},"types":["ID"],"contexts":[depth0],"data":data})));
-  data.buffer.push("\n    <div class=\"tooltip\">\n");
-  stack1 = helpers['if'].call(depth0, "isCopied", {"name":"if","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.program(3, data),"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("    </div>\n  </button>\n</div>\n");
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n    <div class=\"tooltip\">\n      ");
+  stack1 = helpers['if'].call(depth0, "isCopied", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    </div>\n  </button>\n</div>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["components/flash-message"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, buffer = '';
+Ember.TEMPLATES["components/flash-message"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1;
+
+
   data.buffer.push("<div id=\"flash\">");
-  stack1 = helpers._triageMustache.call(depth0, "message", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
+  stack1 = helpers._triageMustache.call(depth0, "message", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</div>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["components/loading-button"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
-  data.buffer.push("    <span></span>\n    <span></span>\n    <span></span>\n");
-  },"3":function(depth0,helpers,partials,data) {
-  var stack1, buffer = '';
-  data.buffer.push("    ");
-  stack1 = helpers._triageMustache.call(depth0, "buttonText", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("\n");
+Ember.TEMPLATES["components/loading-button"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  
+  data.buffer.push("\n    <span></span>\n    <span></span>\n    <span></span>\n  ");
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n    ");
+  stack1 = helpers._triageMustache.call(depth0, "buttonText", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  ");
   return buffer;
-},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, escapeExpression=this.escapeExpression, buffer = '';
+  }
+
   data.buffer.push("<a ");
-  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {"name":"bind-attr","hash":{
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("isVisible:visible :loading-button")
-  },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"types":[],"contexts":[],"data":data})));
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "showLoading", {"name":"action","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING"],"contexts":[depth0],"data":data})));
-  data.buffer.push(">\n");
-  stack1 = helpers['if'].call(depth0, "isLoading", {"name":"if","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.program(3, data),"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("</a>\n");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "showLoading", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">\n  ");
+  stack1 = helpers['if'].call(depth0, "isLoading", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n</a>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["components/on-off-switch"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var escapeExpression=this.escapeExpression, buffer = '';
+Ember.TEMPLATES["components/on-off-switch"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', escapeExpression=this.escapeExpression;
+
+
   data.buffer.push("<div ");
-  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {"name":"bind-attr","hash":{
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("switchState:on:off :switch-container")
-  },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"types":[],"contexts":[],"data":data})));
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">\n  <span class=\"off\">");
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "onText", {"name":"_triageMustache","hash":{
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "onText", {hash:{
     'unescaped': ("true")
-  },"hashTypes":{'unescaped': "STRING"},"hashContexts":{'unescaped': depth0},"types":["ID"],"contexts":[depth0],"data":data})));
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("</span>\n  <div class=\"switch\"><div class=\"knob\"></div></div>\n  <span class=\"on\">");
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "offText", {"name":"_triageMustache","hash":{
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "offText", {hash:{
     'unescaped': ("true")
-  },"hashTypes":{'unescaped': "STRING"},"hashContexts":{'unescaped': depth0},"types":["ID"],"contexts":[depth0],"data":data})));
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("</span>\n</div>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["components/rainbow-code"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var escapeExpression=this.escapeExpression, buffer = '';
+Ember.TEMPLATES["components/rainbow-code"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', escapeExpression=this.escapeExpression;
+
+
   data.buffer.push("<pre ");
-  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {"name":"bind-attr","hash":{
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("language :rainbow")
-  },"hashTypes":{'class': "STRING"},"hashContexts":{'class': depth0},"types":[],"contexts":[],"data":data})));
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">");
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "highlightedCode", {"name":"_triageMustache","hash":{
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "highlightedCode", {hash:{
     'unescaped': ("true")
-  },"hashTypes":{'unescaped': "STRING"},"hashContexts":{'unescaped': depth0},"types":["ID"],"contexts":[depth0],"data":data})));
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("</pre>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["equations/help"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = '';
+Ember.TEMPLATES["equations/help"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
   data.buffer.push("<nav>\n  ");
-  data.buffer.push(escapeExpression(((helpers.partial || (depth0 && depth0.partial) || helperMissing).call(depth0, "logo", {"name":"partial","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING"],"contexts":[depth0],"data":data}))));
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "logo", options) : helperMissing.call(depth0, "partial", "logo", options))));
   data.buffer.push("\n  <ul>\n    ");
-  data.buffer.push(escapeExpression(((helpers.partial || (depth0 && depth0.partial) || helperMissing).call(depth0, "new-or-continue", {"name":"partial","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING"],"contexts":[depth0],"data":data}))));
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "new-or-continue", options) : helperMissing.call(depth0, "partial", "new-or-continue", options))));
   data.buffer.push("\n  </ul>\n</nav>\n<section id=\"equation\" class=\"help\">\n  <div class=\"markdown\">");
-  data.buffer.push(escapeExpression(((helpers.renderEquation || (depth0 && depth0.renderEquation) || helperMissing).call(depth0, "code", {"name":"renderEquation","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data}))));
+  data.buffer.push(escapeExpression((helper = helpers.renderEquation || (depth0 && depth0.renderEquation),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "code", options) : helperMissing.call(depth0, "renderEquation", "code", options))));
   data.buffer.push("</div>\n</section>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["equations/new"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
+Ember.TEMPLATES["equations/new"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  
   data.buffer.push("Help");
-  },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = '';
+  }
+
   data.buffer.push("<nav>\n  ");
-  data.buffer.push(escapeExpression(((helpers.partial || (depth0 && depth0.partial) || helperMissing).call(depth0, "logo", {"name":"partial","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING"],"contexts":[depth0],"data":data}))));
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "logo", options) : helperMissing.call(depth0, "partial", "logo", options))));
   data.buffer.push("\n  <ul>\n    <li class=\"save\">\n      ");
-  data.buffer.push(escapeExpression(((helpers['loading-button'] || (depth0 && depth0['loading-button']) || helperMissing).call(depth0, {"name":"loading-button","hash":{
-    'action': ("createEquation"),
-    'buttonText': ("Save"),
+  data.buffer.push(escapeExpression((helper = helpers['loading-button'] || (depth0 && depth0['loading-button']),options={hash:{
+    'isVisible': ("isValid"),
     'isLoading': ("isLoading"),
-    'isVisible': ("isValid")
-  },"hashTypes":{'action': "STRING",'buttonText': "STRING",'isLoading': "ID",'isVisible': "ID"},"hashContexts":{'action': depth0,'buttonText': depth0,'isLoading': depth0,'isVisible': depth0},"types":[],"contexts":[],"data":data}))));
+    'buttonText': ("Save"),
+    'action': ("createEquation")
+  },hashTypes:{'isVisible': "ID",'isLoading': "ID",'buttonText': "STRING",'action': "STRING"},hashContexts:{'isVisible': depth0,'isLoading': depth0,'buttonText': depth0,'action': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "loading-button", options))));
   data.buffer.push("\n    </li>\n    <li class=\"sep\"></li>\n    <li class=\"help\">\n      ");
-  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "equations.help", {"name":"link-to","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
-  if (stack1 != null) { data.buffer.push(stack1); }
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "equations.help", options) : helperMissing.call(depth0, "link-to", "equations.help", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    </li>\n  </ul>\n</nav>\n<section id=\"new\">\n  <div id=\"editor\">");
-  data.buffer.push(escapeExpression(((helpers['code-textarea'] || (depth0 && depth0['code-textarea']) || helperMissing).call(depth0, {"name":"code-textarea","hash":{
-    'disabled': ("isLoading"),
-    'value': ("code"),
-    'spellcheck': ("false"),
-    'autocorrect': ("off"),
+  data.buffer.push(escapeExpression((helper = helpers['code-textarea'] || (depth0 && depth0['code-textarea']),options={hash:{
+    'autocapitalize': ("off"),
     'autocomplete': ("off"),
-    'autocapitalize': ("off")
-  },"hashTypes":{'disabled': "ID",'value': "ID",'spellcheck': "STRING",'autocorrect': "STRING",'autocomplete': "STRING",'autocapitalize': "STRING"},"hashContexts":{'disabled': depth0,'value': depth0,'spellcheck': depth0,'autocorrect': depth0,'autocomplete': depth0,'autocapitalize': depth0},"types":[],"contexts":[],"data":data}))));
+    'autocorrect': ("off"),
+    'spellcheck': ("false"),
+    'value': ("code"),
+    'disabled': ("isLoading")
+  },hashTypes:{'autocapitalize': "STRING",'autocomplete': "STRING",'autocorrect': "STRING",'spellcheck': "STRING",'value': "ID",'disabled': "ID"},hashContexts:{'autocapitalize': depth0,'autocomplete': depth0,'autocorrect': depth0,'spellcheck': depth0,'value': depth0,'disabled': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "code-textarea", options))));
   data.buffer.push("</div>\n  <div id=\"preview\">\n    <div class=\"markdown\">");
-  data.buffer.push(escapeExpression(((helpers.renderEquation || (depth0 && depth0.renderEquation) || helperMissing).call(depth0, "code", {"name":"renderEquation","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data}))));
+  data.buffer.push(escapeExpression((helper = helpers.renderEquation || (depth0 && depth0.renderEquation),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "code", options) : helperMissing.call(depth0, "renderEquation", "code", options))));
   data.buffer.push("</div>\n  </div>\n</section>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["equations/show"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
+Ember.TEMPLATES["equations/show"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  
   data.buffer.push("Help");
-  },"3":function(depth0,helpers,partials,data) {
-  var helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = '';
-  data.buffer.push("    ");
-  data.buffer.push(escapeExpression(((helpers['rainbow-code'] || (depth0 && depth0['rainbow-code']) || helperMissing).call(depth0, {"name":"rainbow-code","hash":{
-    'language': ("tex"),
-    'code': ("code")
-  },"hashTypes":{'language': "STRING",'code': "ID"},"hashContexts":{'language': depth0,'code': depth0},"types":[],"contexts":[],"data":data}))));
-  data.buffer.push("\n");
-  return buffer;
-},"5":function(depth0,helpers,partials,data) {
-  var helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = '';
-  data.buffer.push("    <div class=\"markdown\">");
-  data.buffer.push(escapeExpression(((helpers.renderEquation || (depth0 && depth0.renderEquation) || helperMissing).call(depth0, "code", {"name":"renderEquation","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data}))));
-  data.buffer.push("</div>\n");
-  return buffer;
-},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = '';
-  data.buffer.push("<nav>\n  ");
-  data.buffer.push(escapeExpression(((helpers.partial || (depth0 && depth0.partial) || helperMissing).call(depth0, "logo", {"name":"partial","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING"],"contexts":[depth0],"data":data}))));
-  data.buffer.push("\n  <ul>\n    ");
-  data.buffer.push(escapeExpression(((helpers.partial || (depth0 && depth0.partial) || helperMissing).call(depth0, "new-or-continue", {"name":"partial","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING"],"contexts":[depth0],"data":data}))));
-  data.buffer.push("\n    <li class=\"fork\">\n      <a ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "forkEquation", {"name":"action","hash":{},"hashTypes":{},"hashContexts":{},"types":["STRING"],"contexts":[depth0],"data":data})));
-  data.buffer.push(">Fork</a>\n    </li>\n    <li class=\"sep\"></li>\n    <li class=\"help\">\n      ");
-  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "equations.help", {"name":"link-to","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("\n    </li>\n  </ul>\n</nav>\n<div class=\"info\">\n  <div class=\"inner\">\n    <div class=\"meta\">Created ");
-  data.buffer.push(escapeExpression(((helpers.formatTimestamp || (depth0 && depth0.formatTimestamp) || helperMissing).call(depth0, "createdAt", {"name":"formatTimestamp","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data}))));
-  data.buffer.push(" &middot; ");
-  stack1 = helpers._triageMustache.call(depth0, "code.length", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push(" chars</div>\n    <div class=\"source\">");
-  data.buffer.push(escapeExpression(((helpers['on-off-switch'] || (depth0 && depth0['on-off-switch']) || helperMissing).call(depth0, {"name":"on-off-switch","hash":{
-    'switchState': ("showCode"),
-    'offText': ("<span class=\"octicon octicon-code\"></span>"),
-    'onText': ("<span class=\"octicon octicon-eye\"></span>")
-  },"hashTypes":{'switchState': "ID",'offText': "STRING",'onText': "STRING"},"hashContexts":{'switchState': depth0,'offText': depth0,'onText': depth0},"types":[],"contexts":[],"data":data}))));
-  data.buffer.push("</div>\n    <div class=\"url\">");
-  data.buffer.push(escapeExpression(((helpers['clipboard-button'] || (depth0 && depth0['clipboard-button']) || helperMissing).call(depth0, {"name":"clipboard-button","hash":{
-    'clipboardText': ("currentUrl"),
-    'tooltipText': ("Copy URL")
-  },"hashTypes":{'clipboardText': "ID",'tooltipText': "STRING"},"hashContexts":{'clipboardText': depth0,'tooltipText': depth0},"types":[],"contexts":[],"data":data}))));
-  data.buffer.push("</div>\n  </div>\n</div>\n<section id=\"equation\">\n");
-  stack1 = helpers['if'].call(depth0, "showCode", {"name":"if","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(3, data),"inverse":this.program(5, data),"types":["ID"],"contexts":[depth0],"data":data});
-  if (stack1 != null) { data.buffer.push(stack1); }
-  data.buffer.push("</section>\n");
-  return buffer;
-},"useData":true});
+  }
 
-Ember.TEMPLATES["error"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
-  data.buffer.push("Create a new equation");
-  },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helperMissing=helpers.helperMissing, buffer = '';
-  data.buffer.push("<section id=\"error\">\n  <h1>Oops... an error occured.</h1>\n  ");
-  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "equations.new", {"name":"link-to","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
-  if (stack1 != null) { data.buffer.push(stack1); }
+function program3(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n    ");
+  data.buffer.push(escapeExpression((helper = helpers['rainbow-code'] || (depth0 && depth0['rainbow-code']),options={hash:{
+    'code': ("code"),
+    'language': ("tex")
+  },hashTypes:{'code': "ID",'language': "STRING"},hashContexts:{'code': depth0,'language': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "rainbow-code", options))));
+  data.buffer.push("\n  ");
+  return buffer;
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n    <div class=\"markdown\">");
+  data.buffer.push(escapeExpression((helper = helpers.renderEquation || (depth0 && depth0.renderEquation),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "code", options) : helperMissing.call(depth0, "renderEquation", "code", options))));
+  data.buffer.push("</div>\n  ");
+  return buffer;
+  }
+
+  data.buffer.push("<nav>\n  ");
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "logo", options) : helperMissing.call(depth0, "partial", "logo", options))));
+  data.buffer.push("\n  <ul>\n    ");
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "new-or-continue", options) : helperMissing.call(depth0, "partial", "new-or-continue", options))));
+  data.buffer.push("\n    <li class=\"fork\">\n      <a ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "forkEquation", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">Fork</a>\n    </li>\n    <li class=\"sep\"></li>\n    <li class=\"help\">\n      ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "equations.help", options) : helperMissing.call(depth0, "link-to", "equations.help", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    </li>\n  </ul>\n</nav>\n<div class=\"info\">\n  <div class=\"inner\">\n    <div class=\"meta\">Created ");
+  data.buffer.push(escapeExpression((helper = helpers.formatTimestamp || (depth0 && depth0.formatTimestamp),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "createdAt", options) : helperMissing.call(depth0, "formatTimestamp", "createdAt", options))));
+  data.buffer.push(" &middot; ");
+  stack1 = helpers._triageMustache.call(depth0, "code.length", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(" chars</div>\n    <div class=\"source\">");
+  data.buffer.push(escapeExpression((helper = helpers['on-off-switch'] || (depth0 && depth0['on-off-switch']),options={hash:{
+    'onText': ("<span class=\"octicon octicon-eye\"></span>"),
+    'offText': ("<span class=\"octicon octicon-code\"></span>"),
+    'switchState': ("showCode")
+  },hashTypes:{'onText': "STRING",'offText': "STRING",'switchState': "ID"},hashContexts:{'onText': depth0,'offText': depth0,'switchState': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "on-off-switch", options))));
+  data.buffer.push("</div>\n    <div class=\"url\">");
+  data.buffer.push(escapeExpression((helper = helpers['clipboard-button'] || (depth0 && depth0['clipboard-button']),options={hash:{
+    'tooltipText': ("Copy URL"),
+    'clipboardText': ("currentUrl")
+  },hashTypes:{'tooltipText': "STRING",'clipboardText': "ID"},hashContexts:{'tooltipText': depth0,'clipboardText': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "clipboard-button", options))));
+  data.buffer.push("</div>\n  </div>\n</div>\n<section id=\"equation\">\n  ");
+  stack1 = helpers['if'].call(depth0, "showCode", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n</section>\n");
   return buffer;
-},"useData":true});
+  
+});
 
-Ember.TEMPLATES["loading"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+Ember.TEMPLATES["error"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  
+  data.buffer.push("Create a new equation");
+  }
+
+  data.buffer.push("<section id=\"error\">\n  <h1>Oops... an error occured.</h1>\n  ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "equations.new", options) : helperMissing.call(depth0, "link-to", "equations.new", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n</section>\n");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["loading"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
   data.buffer.push("<div class=\"loading-indicator\">\n  <span></span>\n  <span></span>\n  <span></span>\n</div>\n");
-  },"useData":true});
+  
+});
