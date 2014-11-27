@@ -63885,7 +63885,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 
 
-  data.buffer.push("<div id=\"logo\"><span>equat</span><span>.io</span></div>\n");
+  data.buffer.push("<div id=\"logo\">\n  <span>eqn</span>\n</div>\n");
   
 });
 
