@@ -63386,7 +63386,7 @@ var selectAll = function(e) {
 };
 
 ZeroClipboard.config({
-  swfPath: "/flash/ZeroClipboard.swf",
+  swfPath: "static/ZeroClipboard.swf",
   forceHandCursor: true
 });
 

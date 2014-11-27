@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 
     clean: [
       "tmp",
-      "dist/*"
+      "dist/*.css",
+      "dist/*.js"
     ],
 
     uglify: {
@@ -127,14 +128,13 @@ module.exports = function(grunt) {
         update: true,
         lineNumbers: true,
         loadPath: [
-          "lib/bourbon/dist",
-          "assets/styleshets/"
+          "lib/bourbon/dist"
         ],
         style: "nested"
       },
       dist: {
         files: {
-          "dist/application.css": "assets/stylesheets/application.scss"
+          "dist/application.css": "sass/application.scss"
         }
       }
     },
@@ -167,7 +167,7 @@ module.exports = function(grunt) {
       },
 
       sass: {
-        files: "assets/stylesheets/**/*.scss",
+        files: "sass/**/*.scss",
         tasks: ["sass"]
       }
     }
