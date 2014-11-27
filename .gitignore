@@ -9,3 +9,6 @@ coverage/
 
 # sauce credentials
 sauce.json
+
+# sass cache
+.sass-cache/
