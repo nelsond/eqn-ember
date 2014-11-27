@@ -6,3 +6,6 @@ tmp/
 
 # test coverage
 coverage/
+
+# sauce credentials
+sauce.json

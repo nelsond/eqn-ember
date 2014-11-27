@@ -3,6 +3,13 @@ node_js:
   - "0.10"
 before_script:
   - uname -a
-  - npm install -g bower
+install:
+  - npm install
   - npm install -g grunt-cli
   - bower install
+script:
+  - npm test
+env:
+  global:
+    - secure: X1p/47NsKlJ6e0oML49DS8CjYf0z5eWFYpci8ZTIfOMPNULJUgHtzLZAidV0DR8Iy6+xvn0Tn2rKLCK45V5EMGXs32/Agr/TARsc2Hg43ifn6U9HlmbqBOaQQEYEiKdEaOs1O2bo8ez5HjQ0LaYblXD3BAnm6hkwYXIjS7u/PhE=
+    - secure: KDnL5/vT7tCido6l9K/KefE5Kn+GazSKz3erGn2ogh9USX2o+5EqMC1xHhquIJLgaCrbfjdC4MDXKDnklcPtUJsoCBF5hBHpkcZF5IVcML3NErSUvNZxL+nSQaF6JdvJKIgLUlq6jLiNuPrk7RIVQ0/59fj2wbeMASum7eACJTk=

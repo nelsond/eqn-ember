@@ -1,6 +1,16 @@
 module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
 
+  if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
+    if (!require("fs").existsSync("sauce.json")) {
+      console.log("Create a sauce.json with your credentials.");
+      process.exit(1);
+    } else {
+      process.env.SAUCE_USERNAME = require("./sauce").username;
+      process.env.SAUCE_ACCESS_KEY = require("./sauce").accessKey;
+    }
+  }
+
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
 
@@ -75,50 +85,96 @@ module.exports = function(grunt) {
     },
 
     karma: {
-      all: {
-        options: {
-          basePath: "",
-          frameworks: ["qunit"],
-          files: [
-            "lib/jquery/jquery.js",
-            "lib/jquery-mockjax/jquery.mockjax.js",
-            "lib/katex-runtime/index.js",
-            "lib/moment/moment.js",
-            "lib/zeroclipboard/dist/ZeroClipboard.js",
-            "lib/showdown/src/showdown.js",
-            "lib/rainbow/js/rainbow.js",
-            "lib/handlebars/handlebars.js",
-            "lib/ember/ember.js",
-            "lib/ember-data/ember-data.js",
-            "lib/ember-qunit/dist/globals/main.js",
-            "app/application.js",
-            "app/components/*.js",
-            "app/helpers.js",
-            "app/models/*.js",
-            "app/controllers/*.js",
-            "app/router.js",
-            "app/templates/*.hbs",
-            "app/templates/**/*.hbs",
-            "test/helper.js",
-            "test/**/*.js"
-          ],
-          plugins: [
-            "karma-qunit",
-            "karma-ember-preprocessor",
-            "karma-phantomjs-launcher",
-            "karma-coverage",
-            "karma-osx-reporter"
-          ],
-          preprocessors: {
-            "**/*.hbs": "ember",
-            "app/**/*.js": "coverage"
+      options: {
+        basePath: "",
+        frameworks: ["qunit"],
+        files: [
+          "lib/jquery/jquery.js",
+          "lib/jquery-mockjax/jquery.mockjax.js",
+          "lib/katex-runtime/index.js",
+          "lib/moment/moment.js",
+          "lib/zeroclipboard/dist/ZeroClipboard.js",
+          "lib/showdown/src/showdown.js",
+          "lib/rainbow/js/rainbow.js",
+          "lib/handlebars/handlebars.js",
+          "lib/ember/ember.js",
+          "lib/ember-data/ember-data.js",
+          "lib/ember-qunit/dist/globals/main.js",
+          "app/application.js",
+          "app/components/*.js",
+          "app/helpers.js",
+          "app/models/*.js",
+          "app/controllers/*.js",
+          "app/router.js",
+          "app/templates/*.hbs",
+          "app/templates/**/*.hbs",
+          "test/helper.js",
+          "test/**/*.js",
+          {
+            pattern: "dist/static/*",
+            included: false,
+            served: true
+          }
+        ],
+        proxies: {
+          "/static/": "/base/dist/static/"
+        },
+        plugins: [
+          "karma-qunit",
+          "karma-ember-preprocessor",
+          "karma-phantomjs-launcher",
+          "karma-coverage",
+          "karma-osx-reporter",
+          "karma-sauce-launcher"
+        ],
+        preprocessors: {
+          "**/*.hbs": "ember",
+          "app/**/*.js": "coverage"
+        },
+        colors: true
+      },
+
+      sauce: {
+        captureTimeout: 120000,
+        browserNoActivityTimeout: 120000,
+        sauceLabs: {
+          testName: "eqn-ember tests",
+          recordScreenshots: false
+        },
+        customLaunchers: {
+          "sl_Safari": {
+            base: "SauceLabs",
+            browserName: "safari",
+            platform: "OS X 10.10"
           },
-          colors: true,
-          browsers: ["PhantomJS"],
-          singleRun: grunt.option("single-run"),
-          autoWatch: true,
-          reporters: ["dots", "coverage", "osx"]
-        }
+          "sl_Firefox": {
+            base: "SauceLabs",
+            browserName: "firefox"
+          },
+          "sl_Chrome": {
+            base: "SauceLabs",
+            browserName: "chrome"
+          },
+          "sl_IE": {
+            base: "SauceLabs",
+            browserName: "internet explorer"
+          }
+        },
+        browsers: [
+          "sl_Safari",
+          "sl_Firefox",
+          "sl_Chrome",
+          "sl_IE"
+        ],
+        singleRun: true,
+        reporters: ["dots", "saucelabs"]
+      },
+
+      local: {
+        autoWatch: true,
+        singleRun: false,
+        browsers: ["PhantomJS"],
+        reporters: ["dots", "coverage", "osx"]
       }
     },
 
