@@ -213,7 +213,7 @@ module.exports = function(grunt) {
 
       templates: {
         files: "app/templates/**/*.hbs",
-        tasks: ["emberTemplates"]
+        tasks: ["emberTemplates", "concat:application", "concat:dist"]
       },
 
       application: {
